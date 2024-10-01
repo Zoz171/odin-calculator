@@ -45,19 +45,18 @@ function operate(){
             return;
         }
     }
-    finally{
-        if(result == Infinity)
-            print("Math Error");
-        else {
-            if(!isInt(result)){
-                result = parseFloat(result.toFixed(2));
+    if(result == Infinity)
+        print("Math Error");
+    else {
+        if(!isInt(result)){
+            result = parseFloat(result.toFixed(2));
                 // result = Math.floor(result);
-            }
-            print(result);
-            expression = result;
         }
+        print(result);
+        expression = result;
     }
 }
+
 
 function isInt(n){
     return Number(n) === n && n % 1 === 0;
