@@ -49,12 +49,18 @@ function operate(){
         if(result == Infinity)
             print("Math Error");
         else {
-            result = result.toFixed(2);
+            if(!isInt(result)){
+                result = parseFloat(result.toFixed(2));
+                // result = Math.floor(result);
+            }
             print(result);
             expression = result;
         }
     }
 }
 
+function isInt(n){
+    return Number(n) === n && n % 1 === 0;
+}
 
 // print("ZZZZ");
